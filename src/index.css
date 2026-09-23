@@ -23,17 +23,17 @@
 
 [data-theme='dark'] {
   --ink: 45 24% 93%;
-  --paper: 210 15% 14%;
-  --muted: 210 10% 78%;
-  --wine: 356 70% 57%;
-  --gold: 43 74% 58%;
-  --line: 45 24% 93% / .22;
+  --paper: 0 0% 9%;
+  --muted: 45 10% 72%;
+  --wine: 356 64% 62%;
+  --gold: 43 88% 64%;
+  --line: 45 24% 93% / .16;
   --surface-red: rgba(150, 20, 38, 0);
   --surface-gold: rgba(218, 171, 55, 0);
   --surface-grid: rgba(255, 255, 255, 0);
-  --card-start: rgba(24, 24, 26, 0.94);
-  --card-end: rgba(12, 12, 14, 0.98);
-  --card-surface: rgba(24, 24, 26, 0.72);
+  --card-start: rgba(34, 30, 31, 0.98);
+  --card-end: rgba(16, 14, 15, 0.98);
+  --card-surface: rgba(35, 28, 29, 0.82);
   --frame-border: rgba(92, 92, 92, 0.82);
   --match-hover-border: rgba(58, 58, 58, 0.95);
   --match-surface: linear-gradient(135deg, rgba(5, 5, 6, 0.82), rgba(20, 20, 22, 0.82));
@@ -41,13 +41,13 @@
 
 [data-theme='gold'] {
   --ink: 0 0% 7%;
-  --paper: 48 100% 94%;
+  --paper: 45 80% 92%;
   --muted: 42 25% 33%;
   --wine: 356 76% 39%;
-  --gold: 43 88% 41%;
+  --gold: 43 94% 53%;
   --line: 0 0% 7% / .18;
   --surface-red: rgba(132, 0, 28, 0.07);
-  --surface-gold: rgba(201, 159, 64, 0.18);
+  --surface-gold: rgba(244, 203, 93, 0.24);
   --surface-grid: rgba(17, 17, 17, 0.035);
   --card-start: rgba(255, 255, 255, 0.72);
   --card-end: rgba(255, 255, 255, 0.96);
@@ -85,6 +85,31 @@
 [data-theme='dark'] .ticker-bar {
   background: linear-gradient(135deg, hsl(0 0% 7%), hsl(356 42% 21%));
   color: hsl(43 74% 64%);
+}
+
+[data-theme='dark'] .premium-stat,
+[data-theme='dark'] .title-card {
+  border-color: hsl(43 88% 64% / 0.42);
+  border-left-color: hsl(43 88% 64%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme='dark'] .stadium-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(107, 17, 29, 0.12));
+}
+
+[data-theme='gold'] .bg-gold {
+  box-shadow: 0 0 18px hsl(var(--gold) / 0.28);
+}
+
+[data-theme='gold'] .text-gold {
+  text-shadow: 0 0 14px hsl(var(--gold) / 0.55);
+}
+
+[data-theme='gold'] .premium-stat,
+[data-theme='gold'] .title-card {
+  border-color: hsl(var(--gold) / 0.58);
+  box-shadow: 0 12px 30px hsl(var(--gold) / 0.14);
 }
 
 [data-theme='gold'] .hero-surface::before {
