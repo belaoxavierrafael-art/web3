@@ -14,7 +14,7 @@ const stadium = stadiumImage
 const copy = {
   pt: {
     language: 'Idioma', settings: 'Configurações', theme: 'Tema', original: 'Original', dark: 'Escuro', gold: 'Dourado',
-    nav: ['O time', 'Agenda', 'Comunidade', 'Estádio'], instagram: 'Instagram', club: 'Murilo Futebol Clube · MFC', heroBadge: '2025 • Clube amador • Rivalidade e união', heroTitle: <>TRADIÇÃO.<br /><em>FUTURO. GLÓRIA.</em></>, heroText: 'O uniforme representa a nossa identidade: união, dedicação e orgulho de vestir o escudo do Murilo Futebol Clube.', follow: 'Acompanhe no Instagram', meet: 'Conheça o time', ticker: 'AVANTI MFC', tickerSub: 'TODOS JUNTOS POR UM SÓ', identity: 'Nossa identidade', identityTitle: <>O futebol fica<br /><em>melhor junto.</em></>, lead: 'Fundado em 15 de fevereiro de 2025, o MFC reúne talento, amizade e competição saudável em cada partida.', posts: 'Publicações', postsSub: 'na nossa história', followers: 'Seguidores', followersSub: 'na arquibancada', champion: 'Campeão', championSub: 'Copa Sucão', titles: 'Títulos', titlesTitle: <>Uma conquista.</>, firstTitle: 'Copa Sucão', firstTitleDetail: 'Campeão · 2026', comingSoon: 'Mais em breve', watch: 'Fique ligado', agendaTitle: <>Próximo capítulo<br /><em>em breve.</em></>, schedule: 'Agenda do time', matchText: 'Resultados, escalações, gols e novidades publicados no perfil oficial.', updates: 'Ver atualizações', join: 'Faça parte', communityTitle: <>A arquibancada<br />também <em>joga.</em></>, communityText: 'É no campo, na torcida e na resenha que o Murilo FC ganha força.', footer: 'Futebol amador, feito por quem ama jogar.',
+    nav: ['O time', 'Agenda', 'Comunidade', 'Estádio'], instagram: 'Instagram', club: 'Murilo Futebol Clube · MFC', heroBadge: '2025 • Clube amador • Rivalidade e união', heroTitle: <>TRADIÇÃO.<br /><em>FUTURO. GLÓRIA.</em></>, heroText: 'O uniforme representa a nossa identidade: união, dedicação e orgulho de vestir o escudo do Murilo Futebol Clube.', follow: 'Ver elenco', meet: 'Conheça o time', ticker: 'AVANTI MFC', tickerSub: 'TODOS JUNTOS POR UM SÓ', identity: 'Nossa identidade', identityTitle: <>O futebol fica<br /><em>melhor junto.</em></>, lead: 'Fundado em 15 de fevereiro de 2025, o MFC reúne talento, amizade e competição saudável em cada partida.', posts: 'Publicações', postsSub: 'na nossa história', followers: 'Seguidores', followersSub: 'na arquibancada', champion: 'Campeão', championSub: 'Copa Sucão', titles: 'Títulos', titlesTitle: <>Uma conquista.</>, firstTitle: 'Copa Sucão', firstTitleDetail: 'Campeão · 2026', comingSoon: 'Mais em breve', watch: 'Fique ligado', agendaTitle: <>Próximo capítulo<br /><em>em breve.</em></>, schedule: 'Agenda do time', matchText: 'Resultados, escalações, gols e novidades publicados no perfil oficial.', updates: 'Ver próximo jogo', join: 'Faça parte', communityTitle: <>A arquibancada<br />também <em>joga.</em></>, communityText: 'É no campo, na torcida e na resenha que o Murilo FC ganha força.', sponsor: 'Seja patrocinador', results: 'Ver resultados', footer: 'Futebol amador, feito por quem ama jogar.',
   },
   en: {
     language: 'Language', settings: 'Settings', theme: 'Theme', original: 'Original', dark: 'Dark', gold: 'Gold',
@@ -159,7 +159,7 @@ export default function App() {
             <h1 className="max-w-[700px] font-display text-[clamp(4rem,17vw,7.25rem)] font-extrabold uppercase leading-[.86] tracking-[-.025em] md:text-[clamp(4rem,8vw,7.25rem)]">{t.heroTitle}</h1>
             <p className="mt-7 max-w-[430px] text-[15px] leading-7 text-muted md:text-base">{t.heroText}</p>
             <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
-              <Button asChild><a href={instagramUrl} target="_blank" rel="noreferrer">{t.follow}<ArrowUpRight size={16} /></a></Button>
+              <Button asChild><a href="#time">{t.follow}<ArrowDown size={16} /></a></Button>
               <a className="border-b border-ink pb-1 text-xs font-extrabold uppercase tracking-[0.12em] transition-colors hover:text-wine" href="#time">{t.meet} <ArrowDown className="inline" size={16} /></a>
             </div>
           </div>
@@ -225,13 +225,13 @@ export default function App() {
               </div>
 
               <div className="pt-2">
-                <Button asChild variant="gold"><a href={instagramUrl} target="_blank" rel="noreferrer">{t.updates}<ArrowUpRight size={16} /></a></Button>
+                <Button asChild variant="gold"><a href="#agenda">{t.updates}<ArrowDown size={16} /></a></Button>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="comunidade" className="reveal mx-auto max-w-[1240px] px-5 py-20 text-center md:px-16 md:py-32"><Eyebrow center>{t.join}</Eyebrow><h2 className="font-display text-[clamp(3.2rem,11vw,5.1rem)] font-extrabold uppercase leading-[.88]">{t.communityTitle}</h2><p className="mx-auto mb-7 mt-5 max-w-xl text-muted">{t.communityText}</p><Button asChild><a href={instagramUrl} target="_blank" rel="noreferrer">@murilo.fc2026 <ArrowUpRight size={16} /></a></Button></section>
+        <section id="comunidade" className="reveal mx-auto max-w-[1240px] px-5 py-20 text-center md:px-16 md:py-32"><Eyebrow center>{t.join}</Eyebrow><h2 className="font-display text-[clamp(3.2rem,11vw,5.1rem)] font-extrabold uppercase leading-[.88]">{t.communityTitle}</h2><p className="mx-auto mb-7 mt-5 max-w-xl text-muted">{t.communityText}</p><div className="flex flex-wrap justify-center gap-3"><Button asChild><a href="#comunidade">Seja patrocinador <ArrowDown size={16} /></a></Button><Button asChild variant="gold"><a href="#agenda">Ver resultados <ArrowDown size={16} /></a></Button></div></section>
       </main>
 
       <footer className="mx-auto flex max-w-[1240px] flex-col gap-3 border-t border-line px-5 py-6 text-[11px] text-muted md:flex-row md:items-center md:justify-between md:px-8"><span className="font-bold tracking-[.08em] text-ink">MURILO <strong className="text-wine">FC</strong></span><span>{t.footer}</span><span>© 2026</span></footer>
