@@ -69,6 +69,24 @@
   background-color: hsl(0 0% 5%);
 }
 
+.ticker-bar {
+  background: linear-gradient(135deg, hsl(356 58% 24%), hsl(356 68% 34%));
+  color: hsl(var(--gold));
+}
+
+.agenda-surface {
+  background: linear-gradient(135deg, hsl(356 58% 22%), hsl(356 68% 34%) 56%, hsl(8 48% 22%));
+}
+
+[data-theme='dark'] .agenda-surface {
+  background: linear-gradient(135deg, hsl(0 0% 7%), hsl(356 38% 18%) 56%, hsl(0 0% 5%));
+}
+
+[data-theme='dark'] .ticker-bar {
+  background: linear-gradient(135deg, hsl(0 0% 7%), hsl(356 42% 21%));
+  color: hsl(43 74% 64%);
+}
+
 [data-theme='gold'] .hero-surface::before {
   background:
     linear-gradient(135deg, rgba(132, 0, 28, 0.06), rgba(201, 159, 64, 0.12)),

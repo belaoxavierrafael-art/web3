@@ -6,7 +6,6 @@ import crestImage from '../img/file_00000000f09c81f5b0eede2dc6f24358.png'
 import shirtImage from '../img/file_00000000445c820e85663ee2bd9f12ea.png'
 import stadiumImage from '../img/Screenshot_20260920_140315_Instagram.jpg'
 
-const instagramUrl = 'https://www.instagram.com/murilo.fc2026?stkn=ZjNoMm9rNDJxZ2Vz'
 const crest = crestImage
 const shirt = shirtImage
 const stadium = stadiumImage
@@ -79,7 +78,7 @@ export default function App() {
   return (
     <div className="site-shell min-h-screen text-ink transition-colors duration-300">
       <header className="sticky top-0 z-30 border-b border-line bg-paper/90 backdrop-blur-xl shadow-[0_12px_28px_rgba(0,0,0,0.05)]">
-        <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-y-3 px-5 py-4 md:flex-nowrap md:px-8 md:py-5">
+        <div className="mx-auto grid max-w-[1240px] grid-cols-[1fr_auto] items-center gap-y-3 px-5 py-4 md:grid-cols-[1fr_auto_1fr] md:px-8 md:py-5">
         <a href="#inicio" className="group flex items-center gap-3" aria-label="Murilo FC - início">
           <span className="flex h-11 w-11 -skew-x-8 items-center justify-center overflow-hidden rounded-lg border-2 border-gold bg-ink shadow-[0_8px_20px_rgba(0,0,0,0.14)] transition-transform duration-200 group-hover:scale-105">
             <img className="h-full w-full skew-x-8 object-contain scale-110" src={crest} alt="Escudo do Murilo Futebol Clube" />
@@ -89,14 +88,13 @@ export default function App() {
             <span className="mt-1 text-[9px] font-bold uppercase tracking-[.2em] text-muted">Futebol amador · 2025</span>
           </span>
         </a>
-        <nav className="order-3 flex w-full items-center justify-center gap-1 rounded-full border border-line bg-ink/[0.03] p-1 text-[11px] font-bold sm:text-[12px] md:order-none md:w-auto" aria-label="Navegação principal">
+        <nav className="order-3 col-span-2 flex w-full items-center justify-center gap-1 rounded-full border border-line bg-ink/[0.03] p-1 text-[11px] font-bold sm:text-[12px] md:order-none md:col-span-1 md:col-start-2 md:w-auto" aria-label="Navegação principal">
           <a href="#time" className="rounded-full px-4 py-2 transition-colors hover:bg-gold/15 hover:text-wine">{t.nav[0]}</a>
           <a href="#agenda" className="rounded-full px-4 py-2 transition-colors hover:bg-gold/15 hover:text-wine">{t.nav[1]}</a>
           <a href="#comunidade" className="rounded-full px-4 py-2 transition-colors hover:bg-gold/15 hover:text-wine">{t.nav[2]}</a>
           <a href="#estadio" className="rounded-full px-4 py-2 transition-colors hover:bg-gold/15 hover:text-wine">{t.nav[3] || (language === 'es' ? 'Estadio' : language === 'en' ? 'Stadium' : 'Estádio')}</a>
         </nav>
-        <div className="flex items-center gap-2 md:gap-3">
-          <a className="hidden items-center gap-1.5 rounded-full border border-line px-3 py-2 text-[10px] font-extrabold uppercase tracking-[.08em] transition-colors hover:border-wine hover:text-wine sm:inline-flex" href={instagramUrl} target="_blank" rel="noreferrer">{t.instagram} <ArrowUpRight size={14} /></a>
+        <div className="flex items-center justify-self-end gap-2 md:gap-3">
           <Sheet open={settingsOpen} onOpenChange={setSettingsOpen}>
             <SheetTrigger className="inline-flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-ink text-paper transition-colors hover:bg-gold hover:text-ink" aria-label={t.settings}><Settings2 size={17} /></SheetTrigger>
             <SheetContent className="!p-5">
@@ -148,7 +146,7 @@ export default function App() {
       </header>
 
       <main id="inicio">
-        <section className="hero-surface reveal mx-auto grid max-w-[1240px] items-center gap-8 px-5 py-12 md:grid-cols-[1.05fr_.95fr] md:px-16 md:py-16 lg:min-h-[600px]">
+        <section className="hero-surface reveal mx-auto grid max-w-[1240px] items-center gap-8 px-5 py-8 md:grid-cols-[1.05fr_.95fr] md:px-16 md:py-10 lg:min-h-[480px]">
           <div className="relative z-10">
             <Eyebrow>{t.club}</Eyebrow>
             <div className="mb-6 flex flex-wrap items-center gap-2">
@@ -158,10 +156,7 @@ export default function App() {
             </div>
             <h1 className="max-w-[700px] font-display text-[clamp(4rem,17vw,7.25rem)] font-extrabold uppercase leading-[.86] tracking-[-.025em] md:text-[clamp(4rem,8vw,7.25rem)]">{t.heroTitle}</h1>
             <p className="mt-7 max-w-[430px] text-[15px] leading-7 text-muted md:text-base">{t.heroText}</p>
-            <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
-              <Button asChild><a href="#time">{t.follow}<ArrowDown size={16} /></a></Button>
-              <a className="border-b border-ink pb-1 text-xs font-extrabold uppercase tracking-[0.12em] transition-colors hover:text-wine" href="#time">{t.meet} <ArrowDown className="inline" size={16} /></a>
-            </div>
+            <a className="mt-8 inline-block border-b border-ink pb-1 text-xs font-extrabold uppercase tracking-[0.12em] transition-colors hover:text-wine" href="#time">{t.meet} <ArrowDown className="inline" size={16} /></a>
           </div>
           <div className="relative mr-2 mt-10 md:mt-0 md:mr-0">
             <div className="hero-orb" />
@@ -172,22 +167,22 @@ export default function App() {
           </div>
         </section>
 
-        <div className="overflow-hidden bg-gold py-3 font-display text-[18px] font-bold uppercase tracking-[.08em] text-wine md:text-[21px]"><div className="w-max -translate-x-16 md:mx-auto md:translate-x-0">{t.ticker} <span className="mx-5">✦</span> {t.tickerSub} <span className="mx-5">✦</span> {t.ticker} <span className="mx-5">✦</span> {t.tickerSub}</div></div>
+        <div className="ticker-bar overflow-hidden py-3 font-display text-[18px] font-bold uppercase tracking-[.08em] md:text-[21px]"><div className="w-max -translate-x-16 md:mx-auto md:translate-x-0">{t.ticker} <span className="mx-5">✦</span> {t.tickerSub} <span className="mx-5">✦</span> {t.ticker} <span className="mx-5">✦</span> {t.tickerSub}</div></div>
 
-        <section id="time" className="reveal mx-auto max-w-[1240px] px-5 py-20 md:px-16 md:py-28">
+        <section id="time" className="reveal mx-auto max-w-[1240px] px-5 py-12 md:px-16 md:py-16">
           <Eyebrow>{t.identity}</Eyebrow>
           <h2 className="font-display text-[clamp(3.2rem,12vw,5.1rem)] font-extrabold uppercase leading-[.88] tracking-[-.025em]">{t.identityTitle}</h2>
-          <div className="identity-layout mt-12 grid items-end gap-10 md:grid-cols-[190px_minmax(180px,.8fr)_1.2fr] md:gap-20">
-            <div className="identity-badge relative flex h-[190px] w-[190px] items-center justify-center overflow-hidden rounded-2xl bg-ink"><img className="h-[120px] w-[120px] object-contain" src={crest} alt="Escudo bordado do Murilo Futebol Clube" /><span className="absolute bottom-3 font-display text-xs font-bold tracking-[.12em] text-gold">15.02.2025</span></div>
-            <p className="identity-lead max-w-[380px] text-xl font-semibold leading-[1.45] md:text-[22px]">{t.lead}</p>
-            <div className="identity-stats mx-auto grid min-w-0 max-w-[680px] flex-1 grid-cols-2 gap-4">
+          <div className="identity-layout mt-8 grid items-end gap-6 md:grid-cols-[minmax(0,1fr)_minmax(260px,.8fr)] md:gap-x-12 md:gap-y-5">
+            <div className="identity-badge relative flex h-[190px] w-[190px] items-center justify-center overflow-hidden rounded-2xl bg-ink md:col-start-1 md:row-start-1"><img className="h-[120px] w-[120px] object-contain" src={crest} alt="Escudo bordado do Murilo Futebol Clube" /><span className="absolute bottom-3 font-display text-xs font-bold tracking-[.12em] text-gold">15.02.2025</span></div>
+            <p className="identity-lead max-w-[380px] text-xl font-semibold leading-[1.45] md:col-start-1 md:row-start-2 md:text-[22px]">{t.lead}</p>
+            <div className="identity-stats mx-auto grid min-w-0 max-w-[680px] flex-1 grid-cols-2 gap-4 md:col-start-2 md:row-span-2 md:row-start-1">
               <PremiumStat value="98" label={t.posts} sub={t.postsSub} />
               <PremiumStat value="129" label={t.followers} sub="" />
             </div>
           </div>
         </section>
 
-        <section id="estadio" className="stadium-section reveal px-5 py-20 text-ink md:px-[max(64px,calc((100%-1112px)/2))] md:py-24">
+        <section id="estadio" className="stadium-section reveal px-5 py-12 text-ink md:px-[max(64px,calc((100%-1112px)/2))] md:py-14">
           <div className="mx-auto grid max-w-[1240px] items-center gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
             <div className="relative z-10">
               <Eyebrow light>MFC</Eyebrow>
@@ -205,7 +200,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="agenda" className="reveal relative bg-wine px-5 py-20 text-white md:px-[max(64px,calc((100%-1112px)/2))] md:py-24">
+        <section id="agenda" className="agenda-surface reveal relative px-5 py-20 text-white md:px-[max(64px,calc((100%-1112px)/2))] md:py-24">
           <div className="mx-auto grid max-w-[1240px] gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-14">
             <div>
               <Eyebrow light>{t.watch}</Eyebrow>
@@ -224,17 +219,14 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="pt-2">
-                <Button asChild variant="gold"><a href="#agenda">{t.updates}<ArrowDown size={16} /></a></Button>
-              </div>
             </div>
           </div>
         </section>
 
-        <section id="comunidade" className="reveal mx-auto max-w-[1240px] px-5 py-20 text-center md:px-16 md:py-32"><Eyebrow center>{t.join}</Eyebrow><h2 className="font-display text-[clamp(3.2rem,11vw,5.1rem)] font-extrabold uppercase leading-[.88]">{t.communityTitle}</h2><p className="mx-auto mb-7 mt-5 max-w-xl text-muted">{t.communityText}</p><div className="flex flex-wrap justify-center gap-3"><Button asChild><a href="#comunidade">Seja patrocinador <ArrowDown size={16} /></a></Button><Button asChild variant="gold"><a href="#agenda">Ver resultados <ArrowDown size={16} /></a></Button></div></section>
+        <section id="comunidade" className="reveal mx-auto max-w-[1240px] px-5 py-20 text-center md:px-16 md:py-32"><Eyebrow center>{t.join}</Eyebrow><h2 className="font-display text-[clamp(3.2rem,11vw,5.1rem)] font-extrabold uppercase leading-[.88]">{t.communityTitle}</h2><p className="mx-auto mb-7 mt-5 max-w-xl text-muted">{t.communityText}</p></section>
       </main>
 
-      <footer className="mx-auto flex max-w-[1240px] flex-col gap-3 border-t border-line px-5 py-6 text-[11px] text-muted md:flex-row md:items-center md:justify-between md:px-8"><span className="font-bold tracking-[.08em] text-ink">MURILO <strong className="text-wine">FC</strong></span><span>{t.footer}</span><span>© 2026</span></footer>
+      <footer className="mx-auto flex max-w-[1240px] flex-col gap-4 border-t border-line px-5 py-6 text-[11px] text-muted md:flex-row md:items-center md:justify-between md:px-8"><span className="font-bold tracking-[.08em] text-ink">MURILO <strong className="text-wine">FC</strong></span><span>{t.footer}</span><Button asChild><a href="https://www.instagram.com/murilo.fc2026/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={16} /></a></Button><span>© 2026</span></footer>
     </div>
   )
 }
