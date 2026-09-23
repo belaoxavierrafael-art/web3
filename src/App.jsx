@@ -25,6 +25,21 @@ const copy = {
   },
 }
 
+const journeyCopy = {
+  pt: {
+    eyebrow: 'Nossa trajetória', title: <>Um clube jovem,<br /><em>uma história gigante.</em></>, text: 'Cada partida acrescenta uma nova página à história do Murilo FC.',
+    milestones: [['2025', 'Fundação', 'O primeiro capítulo começa em 15 de fevereiro.'], ['2026', 'Copa Sucão', 'A primeira taça entra para a sala de troféus.'], ['Hoje', 'Sempre juntos', 'A torcida continua fazendo parte de cada jogo.']],
+  },
+  en: {
+    eyebrow: 'Our journey', title: <>A young club,<br /><em>a giant story.</em></>, text: 'Every match adds a new page to Murilo FC history.',
+    milestones: [['2025', 'Founded', 'The first chapter began on February 15.'], ['2026', 'Copa Sucão', 'The first trophy enters the cabinet.'], ['Today', 'Always together', 'The supporters remain part of every match.']],
+  },
+  es: {
+    eyebrow: 'Nuestra trayectoria', title: <>Un club joven,<br /><em>una gran historia.</em></>, text: 'Cada partido suma una nueva página a la historia del Murilo FC.',
+    milestones: [['2025', 'Fundación', 'El primer capítulo comenzó el 15 de febrero.'], ['2026', 'Copa Sucão', 'El primer trofeo entra en la vitrina.'], ['Hoy', 'Siempre juntos', 'La afición sigue siendo parte de cada partido.']],
+  },
+}
+
 function stored(key, fallback) {
   try {
     const value = localStorage.getItem(key)
@@ -41,6 +56,7 @@ export default function App() {
   const [theme, setTheme] = useState(() => stored('mfc-theme', 'original'))
   const [settingsOpen, setSettingsOpen] = useState(false)
   const t = copy[language]
+  const journey = journeyCopy[language]
 
   useEffect(() => {
     document.documentElement.lang = language === 'pt' ? 'pt-BR' : language
@@ -170,12 +186,12 @@ export default function App() {
         <div className="ticker-bar overflow-hidden py-3 font-display text-[18px] font-bold uppercase tracking-[.08em] md:text-[21px]"><div className="w-max -translate-x-16 md:mx-auto md:translate-x-0">{t.ticker} <span className="mx-5">✦</span> {t.tickerSub} <span className="mx-5">✦</span> {t.ticker} <span className="mx-5">✦</span> {t.tickerSub}</div></div>
 
         <section id="time" className="reveal mx-auto max-w-[1240px] px-5 py-12 md:px-16 md:py-16">
-          <Eyebrow>{t.identity}</Eyebrow>
-          <h2 className="font-display text-[clamp(3.2rem,12vw,5.1rem)] font-extrabold uppercase leading-[.88] tracking-[-.025em]">{t.identityTitle}</h2>
-          <div className="identity-layout mt-8 grid items-end gap-6 md:grid-cols-[minmax(0,1fr)_minmax(260px,.8fr)] md:gap-x-12 md:gap-y-5">
-            <div className="identity-badge relative flex h-[190px] w-[190px] items-center justify-center overflow-hidden rounded-2xl bg-ink md:col-start-1 md:row-start-1"><img className="h-[120px] w-[120px] object-contain" src={crest} alt="Escudo bordado do Murilo Futebol Clube" /><span className="absolute bottom-3 font-display text-xs font-bold tracking-[.12em] text-gold">15.02.2025</span></div>
-            <p className="identity-lead max-w-[380px] text-xl font-semibold leading-[1.45] md:col-start-1 md:row-start-2 md:text-[22px]">{t.lead}</p>
-            <div className="identity-stats mx-auto grid min-w-0 max-w-[680px] flex-1 grid-cols-2 gap-4 md:col-start-2 md:row-span-2 md:row-start-1">
+          <Eyebrow center>{t.identity}</Eyebrow>
+          <h2 className="text-center font-display text-[clamp(3.2rem,12vw,5.1rem)] font-extrabold uppercase leading-[.88] tracking-[-.025em]">{t.identityTitle}</h2>
+          <div className="identity-layout mt-8 flex flex-col items-center gap-6 text-center">
+            <div className="identity-badge relative flex h-[190px] w-[190px] items-center justify-center overflow-hidden rounded-2xl bg-ink"><img className="h-[120px] w-[120px] object-contain" src={crest} alt="Escudo bordado do Murilo Futebol Clube" /><span className="absolute bottom-3 font-display text-xs font-bold tracking-[.12em] text-gold">15.02.2025</span></div>
+            <p className="identity-lead max-w-[560px] text-xl font-semibold leading-[1.45] md:text-[22px]">{t.lead}</p>
+            <div className="identity-stats grid w-full min-w-0 max-w-[760px] grid-cols-2 gap-4">
               <PremiumStat value="98" label={t.posts} sub={t.postsSub} />
               <PremiumStat value="129" label={t.followers} sub="" />
             </div>
@@ -220,6 +236,16 @@ export default function App() {
               </div>
 
             </div>
+          </div>
+        </section>
+
+        <section className="reveal mx-auto max-w-[1240px] px-5 py-16 md:px-16 md:py-20">
+          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div><Eyebrow>{journey.eyebrow}</Eyebrow><h2 className="font-display text-[clamp(3.2rem,9vw,5.1rem)] font-extrabold uppercase leading-[.88]">{journey.title}</h2></div>
+            <p className="max-w-sm text-muted md:pb-1">{journey.text}</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {journey.milestones.map(([year, title, text]) => <article key={year} className="premium-stat min-h-[160px] rounded-2xl border border-line bg-paper p-4"><p className="font-display text-4xl font-extrabold leading-none text-wine">{year}</p><h3 className="mt-5 text-lg font-extrabold text-ink">{title}</h3><p className="mt-2 text-sm leading-6 text-muted">{text}</p></article>)}
           </div>
         </section>
 

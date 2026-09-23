@@ -318,27 +318,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
   background: linear-gradient(145deg, rgba(17,17,17,0.98), rgba(36,28,26,0.92));
 }
 
-@media (min-width: 480px) and (max-width: 767px) {
-  .identity-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 1.25rem;
-  }
-
-  .identity-layout .identity-badge {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
-
-  .identity-lead {
-    grid-column: 1;
-  }
-
-  .identity-stats {
-    grid-column: 2;
-    width: 100%;
-  }
-}
-
 .premium-stat {
   background: linear-gradient(180deg, var(--card-start), var(--card-end));
   border-left: 4px solid hsl(var(--gold));
