@@ -1,0 +1,161 @@
+Attached Element Context from Integrated Browser
+
+Element: div#radix-:r3:.sheet-panel.fixed.inset-y-0.right-0.z-50.flex.w-[min(24rem,90vw)].flex-col.border-l-[3px].border-gold.bg-[radial-gradient(circle_at_top,_rgba(244,203,93,0.18),_transparent_42%),_hsl(var(--paper))].p-5.text-ink.shadow-[0_30px_80px_rgba(0,0,0,0.35)].outline-none.backdrop-blur-xl.!p-5.sm:w-[min(30rem,90vw)].sm:max-w-[30rem]
+
+URL: http://127.0.0.1:5173/
+
+HTML Path: div#radix-:r3:.sheet-panel.fixed.inset-y-0.right-0.z-50.flex.w-[min(24rem,90vw)].flex-col.border-l-[3px].border-gold.bg-[radial-gradient(circle_at_top,_rgba(244,203,93,0.18),_transparent_42%),_hsl(var(--paper))].p-5.text-ink.shadow-[0_30px_80px_rgba(0,0,0,0.35)].outline-none.backdrop-blur-xl.!p-5.sm:w-[min(30rem,90vw)].sm:max-w-[30rem]
+
+Outer HTML:
+```html
+<div role="dialog" id="radix-:r3:" data-state="open" class="sheet-panel fixed inset-y-0 right-0 z-50 flex w-[min(24rem,90vw)] flex-col border-l-[3px] border-gold bg-[radial-gradient(circle_at_top,_rgba(244,203,93,0.18),_transparent_42%),_hsl(var(--paper))] p-5 text-ink shadow-[0_30px_80px_rgba(0,0,0,0.35)] outline-none backdrop-blur-xl !p-5 sm:w-[min(30rem,90vw)] sm:max-w-[30rem]" tabindex="-1" aria-labelledby="radix-:r4:" style="pointer-events: auto;"><div class="mb-8 border-b border-line pb-6"><div class="flex items-center justify-between gap-3"><div><p class="mb-2 text-[10px] font-extrabold uppercase tracking-[.18em] text-wine">Personalização</p><h2 id="radix-:r4:" class="font-display text-4xl font-extrabold uppercase leading-[.9]">Configurações</h2></div></div></div><div class="mb-5 grid grid-cols-2 gap-1 rounded-xl border border-line bg-ink/[0.04] p-1"><button type="button" class="flex items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-[11px] font-extrabold uppercase tracking-[.08em] transition-colors bg-ink text-paper"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings2"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg> Preferências</button><button type="button" class="flex items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-[11px] font-extrabold uppercase tracking-[.08em] transition-colors text-muted hover:bg-gold/10 hover:text-ink"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg> Calendário</button></div><div class="space-y-4 pb-2"><div class="rounded-2xl border border-line bg-ink/[0.02] p-3.5"><div class="mb-3 flex items-center justify-between gap-3"><p class="text-[10px] font-extrabold uppercase tracking-[.14em] text-muted">Tema</p><span class="rounded-full border border-line bg-paper px-2 py-1 text-[9px] font-extrabold uppercase tracking-[.12em] text-ink">Original</span></div><div class="grid gap-2 grid-cols-1 sm:grid-cols-3"><button type="button" class="group relative overflow-hidden rounded-xl border px-2.5 py-2.5 text-left transition-all duration-200 border-gold bg-gold/10 shadow-[inset_0_0_0_1px_rgba(201,159,64,0.4)]"><div class="flex items-center justify-between gap-2"><span class="text-[12px] font-extrabold tracking-[.04em] text-ink">Original</span><span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gold text-[10px] font-black text-ink">✓</span></div><p class="mt-1 text-[10px] uppercase tracking-[.08em] text-muted">Clássico</p></button><button type="button" class="group relative overflow-hidden rounded-xl border px-2.5 py-2.5 text-left transition-all duration-200 border-line bg-paper/60 hover:border-gold/60 hover:bg-gold/[0.03]"><div class="flex items-center justify-between gap-2"><span class="text-[12px] font-extrabold tracking-[.04em] text-ink">Escuro</span></div><p class="mt-1 text-[10px] uppercase tracking-[.08em] text-muted">Noite</p></button><button type="button" class="group relative overflow-hidden rounded-xl border px-2.5 py-2.5 text-left transition-all duration-200 border-line bg-paper/60 hover:border-gold/60 hover:bg-gold/[0.03]"><div class="flex items-center justify-between gap-2"><span class="text-[12px] font-extrabold tracking-[.04em] text-ink">Dourado</span></div><p class="mt-1 text-[10px] uppercase tracking-[.08em] text-muted">Premium</p></button></div></div><div class="rounded-2xl border border-line bg-ink/[0.02] p-3.5"><div class="mb-3 flex items-center justify-between gap-3"><p class="text-[10px] font-extrabold uppercase tracking-[.14em] text-muted">Idioma</p><span class="rounded-full border border-line bg-paper px-2 py-1 text-[9px] font-extrabold uppercase tracking-[.12em] text-ink">Português</span></div><div class="grid gap-2 grid-cols-1 sm:grid-cols-3"><button type="button" class="group relative overflow-hidden rounded-xl border px-2.5 py-2.5 text-left transition-all duration-200 border-gold bg-gold/10 shadow-[inset_0_0_0_1px_rgba(201,159,64,0.4)]"><div class="flex items-center justify-between gap-2"><span class="text-[12px] font-extrabold tracking-[.04em] text-ink">Português</span><span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gold text-[10px] font-black text-ink">✓</span></div><p class="mt-1 text-[10px] uppercase tracking-[.08em] text-muted">BR</p></button><button type="button" class="group relative overflow-hidden rounded-xl border px-2.5 py-2.5 text-left transition-all duration-200 border-line bg-paper/60 hover:border-gold/60 hover:bg-gold/[0.03]"><div class="flex items-center justify-between gap-2"><span class="text-[12px] font-extrabold tracking-[.04em] text-ink">English</span></div><p class="mt-1 text-[10px] uppercase tracking-[.08em] text-muted">US</p></button><button type="button" class="group relative overflow-hidden rounded-xl border px-2.5 py-2.5 text-left transition-all duration-200 border-line bg-paper/60 hover:border-gold/60 hover:bg-gold/[0.03]"><div class="flex items-center justify-between gap-2"><span class="text-[12px] font-extrabold tracking-[.04em] text-ink">Español</span></div><p class="mt-1 text-[10px] uppercase tracking-[.08em] text-muted">ES</p></button></div></div></div><div class="mt-auto rounded-2xl border border-line bg-ink/[0.02] p-3.5"><p class="text-[10px] font-extrabold uppercase tracking-[.14em] text-muted">Visual atual</p><div class="mt-2 flex flex-wrap items-center gap-2 text-[11px] font-bold text-ink"><span class="rounded-full border border-line bg-paper px-2 py-1">Original</span><span class="text-muted">•</span><span class="rounded-full border border-line bg-paper px-2 py-1 text-ink">PT</span></div></div><button type="button" class="absolute right-5 top-5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-wine transition-colors hover:border-gold hover:text-wine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2" aria-label="Fechar painel"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button></div>
+```
+
+Dimensions:
+- top: 0px
+- left: 238px
+- width: 384px
+- height: 707px
+
+CSS:
+```css
+element { pointer-events: auto; }
+*, ::before, ::after { --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ; }
+*, ::before, ::after { box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */ }
+* { box-sizing: border-box; }
+.fixed { position: fixed; }
+.inset-y-0 { top: 0px;
+  bottom: 0px; }
+.right-0 { right: 0px; }
+.z-50 { z-index: 50; }
+.flex { display: flex; }
+.w-\[min\(24rem\2c 90vw\)\] { width: min(24rem, 90vw); }
+.flex-col { flex-direction: column; }
+.border-l-\[3px\] { border-left-width: 3px; }
+.border-gold { border-color: hsl(var(--gold)); }
+.bg-\[radial-gradient\(circle_at_top\2c _rgba\(244\2c 203\2c 93\2c 0\.18\)\2c _transparent_42\%\)\2c _hsl\(var\(--paper\)\)\] { background-color: radial-gradient(circle at top, rgba(244,203,93,0.18), transparent 42%), hsl(var(--paper)); }
+.\!p-5 { padding: 1.25rem !important; }
+.p-5 { padding: 1.25rem; }
+.text-ink { color: hsl(var(--ink)); }
+.shadow-\[0_30px_80px_rgba\(0\2c 0\2c 0\2c 0\.35\)\] { --tw-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  --tw-shadow-colored: 0 30px 80px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); }
+.outline-none { outline: 2px solid transparent;
+  outline-offset: 2px; }
+.backdrop-blur-xl { --tw-backdrop-blur: blur(24px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia); }
+.sheet-panel { backdrop-filter: blur(24px);
+  max-width: 100vw; }
+.sheet-panel[data-state='open'] { animation-name: sheet-mobile-in; }
+.sheet-panel[data-state='open'] { animation: sheet-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+/* Pseudo-elements */
+::before, ::after { --tw-content: ''; }
+::selection { background: hsl(var(--gold)); color: hsl(var(--ink)); }
+
+/* Inherited */
+body { color: hsl(var(--ink)); font-family: Manrope, sans-serif }
+html, :host { line-height: 1.5; tab-size: 4 }
+
+/* Resolved values */
+padding: 20px;
+border-width: 0px 0px 0px 3px;
+border-style: solid;
+border-color: rgb(211, 162, 29);
+animation: sheet-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+backdrop-filter: blur(24px);
+background-color: rgba(0, 0, 0, 0);
+bottom: 0px;
+box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.35) 0px 30px 80px 0px;
+box-sizing: border-box;
+color: rgb(10, 10, 10);
+display: flex;
+flex-direction: column;
+font-family: Manrope, sans-serif;
+font-feature-settings: normal;
+height: 707px;
+line-height: 24px;
+max-width: 622px;
+outline-color: rgba(0, 0, 0, 0);
+outline-offset: 2px;
+outline-style: solid;
+outline-width: 2px;
+pointer-events: auto;
+position: fixed;
+right: 0px;
+tab-size: 4;
+top: 0px;
+unicode-bidi: isolate /*UA*/;
+width: 384px;
+z-index: 50;
+
+/* CSS variables */
+--tw-ring-offset-shadow: 0 0 #0000;
+--gold: 44 76% 47%;
+--tw-backdrop-sepia: ;
+--tw-ring-shadow: 0 0 #0000;
+--tw-backdrop-saturate: ;
+--tw-backdrop-invert: ;
+--tw-backdrop-grayscale: ;
+--tw-backdrop-contrast: ;
+--tw-backdrop-brightness: ;
+--tw-backdrop-blur: blur(24px);
+--tw-shadow: 0 30px 80px rgba(0,0,0,0.35);
+--ink: 0 0% 4%;
+--tw-backdrop-hue-rotate: ;
+--paper: 0 0% 100%;
+--tw-backdrop-opacity: ;
+```
