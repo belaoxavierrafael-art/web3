@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from 'react'
-import { ArrowDown, ArrowUpRight, CalendarDays, ChevronLeft, ChevronRight, Settings2 } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, PanelRightOpen, Settings2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import crestImage from '../img/file_00000000f09c81f5b0eede2dc6f24358.png'
@@ -11,6 +11,10 @@ const shirt = shirtImage
 const stadium = stadiumImage
 
 const matches = [
+  { date: '2025-12-07', opponent: 'XV de Piracicaba', score: '3 x 0', result: 'V', competition: 'Amistoso' },
+  { date: '2026-03-05', opponent: 'YFC', score: '8 x 6', result: 'V', competition: 'Amistoso' },
+  { date: '2026-03-17', opponent: 'YFC', score: '5 x 4', result: 'V', competition: 'Amistoso' },
+  { date: '2026-03-31', opponent: 'YFC', score: '9 x 4', result: 'V', competition: 'Amistoso' },
   { date: '2026-05-22', opponent: 'Sporting Portugal', score: '2 x 1', result: 'V', competition: 'Amistoso' },
   { date: '2026-06-04', opponent: 'J. Malucelli', score: '12 x 9', result: 'V', competition: 'Copa Sucão' },
   { date: '2026-08-05', opponent: 'Bahia', score: '2 x 1', result: 'V', competition: 'Amistoso' },
@@ -19,15 +23,15 @@ const matches = [
 
 const copy = {
   pt: {
-    language: 'Idioma', settings: 'Configurações', theme: 'Tema', original: 'Original', gold: 'Dourado', calendar: 'Calendário', preferences: 'Preferências', matches: 'Partidas', allMatches: 'Todos os jogos', noMatches: 'Nenhum jogo neste mês', previous: 'Mês anterior', next: 'Próximo mês',
+    language: 'Idioma', settings: 'Configurações', sidebar: 'Aba lateral', theme: 'Tema', original: 'Original', gold: 'Dourado', calendar: 'Calendário', preferences: 'Preferências', matches: 'Partidas', allMatches: 'Todos os jogos', noMatches: 'Nenhum jogo neste mês', previous: 'Mês anterior', next: 'Próximo mês', year: 'Ano', calendarLocale: 'pt-BR', weekdays: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'], victory: 'Vitória', draw: 'Empate', result: 'Resultado',
     nav: ['O time', 'Agenda', 'Comunidade', 'Estádio'], instagram: 'Instagram', club: 'Murilo Futebol Clube · MFC', heroBadge: '2025 • Clube amador • Rivalidade e união', heroTitle: <>TRADIÇÃO.<br /><em>FUTURO. GLÓRIA.</em></>, heroText: 'O uniforme representa a nossa identidade: união, dedicação e orgulho de vestir o escudo do Murilo Futebol Clube.', follow: 'Ver elenco', meet: 'Conheça o time', ticker: 'AVANTI MFC', tickerSub: 'TODOS JUNTOS POR UM SÓ', identity: 'Nossa identidade', identityTitle: <>O futebol fica<br /><em>melhor junto.</em></>, lead: 'Fundado em 15 de fevereiro de 2025, o MFC reúne talento, amizade e competição saudável em cada partida.', posts: 'Publicações', postsSub: 'na nossa história', followers: 'Seguidores', followersSub: 'na arquibancada', champion: 'Campeão', championSub: 'Copa Sucão', titles: 'Títulos', titlesTitle: <>Uma conquista.</>, firstTitle: 'Copa Sucão', firstTitleDetail: 'Campeão · 2026', comingSoon: 'Mais em breve', watch: 'Fique ligado', agendaTitle: <>Próximo capítulo<br /><em>em breve.</em></>, schedule: 'Agenda do time', matchText: 'Resultados, escalações, gols e novidades publicados no perfil oficial.', updates: 'Ver próximo jogo', join: 'Faça parte', communityTitle: <>A arquibancada<br />também <em>joga.</em></>, communityText: 'É no campo, na torcida e na resenha que o Murilo FC ganha força.', sponsor: 'Seja patrocinador', results: 'Ver resultados', footer: 'Futebol amador, feito por quem ama jogar.',
   },
   en: {
-    language: 'Language', settings: 'Settings', theme: 'Theme', original: 'Original', gold: 'Gold', calendar: 'Calendar', preferences: 'Preferences', matches: 'Matches', allMatches: 'All matches', noMatches: 'No matches this month', previous: 'Previous month', next: 'Next month',
+    language: 'Language', settings: 'Settings', sidebar: 'Side panel', theme: 'Theme', original: 'Original', gold: 'Gold', calendar: 'Calendar', preferences: 'Preferences', matches: 'Matches', allMatches: 'All matches', noMatches: 'No matches this month', previous: 'Previous month', next: 'Next month', year: 'Year', calendarLocale: 'en-US', weekdays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'], victory: 'Victory', draw: 'Draw', result: 'Result',
     nav: ['The team', 'Schedule', 'Community', 'Stadium'], instagram: 'Instagram', club: 'Murilo Football Club · MFC', heroBadge: '2025 • Amateur club • Rivalry and unity', heroTitle: <>TRADITION.<br /><em>FUTURE. GLORY.</em></>, heroText: 'The jersey represents our identity: unity, dedication and pride in wearing the Murilo Football Club crest.', follow: 'Follow on Instagram', meet: 'Meet the team', ticker: 'GO MFC', tickerSub: 'ALL TOGETHER AS ONE', identity: 'Our identity', identityTitle: <>Football is<br /><em>better together.</em></>, lead: 'Founded on February 15, 2025, MFC brings talent, friendship and healthy competition to every match.', posts: 'Posts', postsSub: 'in our story', followers: 'Followers', followersSub: 'in the stands', champion: 'Champions', championSub: 'Copa Sucão', titles: 'Titles', titlesTitle: <>One achievement.</>, firstTitle: 'Copa Sucão', firstTitleDetail: 'Champions · 2026', comingSoon: 'More coming soon', watch: 'Stay tuned', agendaTitle: <>Next chapter<br /><em>coming soon.</em></>, schedule: 'Team schedule', matchText: 'Results, lineups, goals and news published on the official profile.', updates: 'See updates', join: 'Join us', communityTitle: <>The stands<br />also <em>play.</em></>, communityText: 'On the field, in the stands and in the conversation, Murilo FC grows stronger.', footer: 'Amateur football, made by people who love to play.',
   },
   es: {
-    language: 'Idioma', settings: 'Configuración', theme: 'Tema', original: 'Original', gold: 'Dorado', calendar: 'Calendario', preferences: 'Preferencias', matches: 'Partidos', allMatches: 'Todos los partidos', noMatches: 'No hay partidos este mes', previous: 'Mes anterior', next: 'Próximo mes',
+    language: 'Idioma', settings: 'Configuración', sidebar: 'Panel lateral', theme: 'Tema', original: 'Original', gold: 'Dorado', calendar: 'Calendario', preferences: 'Preferencias', matches: 'Partidos', allMatches: 'Todos los partidos', noMatches: 'No hay partidos este mes', previous: 'Mes anterior', next: 'Próximo mes', year: 'Año', calendarLocale: 'es-ES', weekdays: ['D', 'L', 'M', 'X', 'J', 'V', 'S'], victory: 'Victoria', draw: 'Empate', result: 'Resultado',
     nav: ['El equipo', 'Agenda', 'Comunidad'], instagram: 'Instagram', club: 'Murilo Fútbol Club · MFC', heroBadge: '2025 • Club amateur • Rivalidad y unión', heroTitle: <>TRADICIÓN.<br /><em>FUTURO. GLORIA.</em></>, heroText: 'El uniforme representa nuestra identidad: unión, dedicación y orgullo de vestir el escudo del Murilo Fútbol Club.', follow: 'Síguenos en Instagram', meet: 'Conoce al equipo', ticker: 'VAMOS MFC', tickerSub: 'TODOS JUNTOS COMO UNO', identity: 'Nuestra identidad', identityTitle: <>El fútbol es<br /><em>mejor juntos.</em></>, lead: 'Fundado el 15 de febrero de 2025, el MFC reúne talento, amistad y competencia saludable en cada partido.', posts: 'Publicaciones', postsSub: 'en nuestra historia', followers: 'Seguidores', followersSub: 'en la grada', champion: 'Campeones', championSub: 'Copa Sucão', titles: 'Títulos', titlesTitle: <>Un logro.</>, firstTitle: 'Copa Sucão', firstTitleDetail: 'Campeones · 2026', comingSoon: 'Más muy pronto', watch: 'Mantente atento', agendaTitle: <>Próximo capítulo<br /><em>muy pronto.</em></>, schedule: 'Agenda del equipo', matchText: 'Resultados, alineaciones, goles y novedades publicados en el perfil oficial.', updates: 'Ver novedades', join: 'Sé parte', communityTitle: <>La grada<br />también <em>juega.</em></>, communityText: 'En el campo, en la grada y en la conversación, Murilo FC gana fuerza.', footer: 'Fútbol amateur, hecho por quienes aman jugar.',
   },
 }
@@ -120,13 +124,13 @@ export default function App() {
         </nav>
         <div className="flex items-center justify-self-end gap-2 md:gap-3">
           <Sheet open={settingsOpen} onOpenChange={setSettingsOpen}>
-            <SheetTrigger className="inline-flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-ink text-paper transition-colors hover:bg-gold hover:text-ink" aria-label={t.settings}><Settings2 size={17} /></SheetTrigger>
+            <SheetTrigger className="inline-flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-ink text-paper transition-colors hover:bg-gold hover:text-ink" aria-label={t.sidebar}><PanelRightOpen size={17} /></SheetTrigger>
             <SheetContent className="!p-5 sm:w-[min(30rem,90vw)] sm:max-w-[30rem]">
               <SheetHeader>
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <p className="mb-2 text-[10px] font-extrabold uppercase tracking-[.18em] text-wine">Personalização</p>
-                    <SheetTitle>{t.settings}</SheetTitle>
+                    <SheetTitle>{t.sidebar}</SheetTitle>
                   </div>
                 </div>
               </SheetHeader>
@@ -274,14 +278,22 @@ export default function App() {
 }
 
 function CalendarPanel({ t }) {
-  const latestMatchMonth = Math.max(...matches.map((match) => Number(match.date.slice(5, 7)) - 1))
-  const [month, setMonth] = useState(latestMatchMonth)
-  const year = 2026
-  const monthMatches = matches.filter((match) => Number(match.date.slice(5, 7)) - 1 === month)
+  const years = [...new Set(matches.map((match) => Number(match.date.slice(0, 4))))].sort((first, second) => second - first)
+  const initialYear = years[0]
+  const initialMonth = Math.max(...matches.filter((match) => match.date.startsWith(`${initialYear}-`)).map((match) => Number(match.date.slice(5, 7)) - 1))
+  const [year, setYear] = useState(initialYear)
+  const [month, setMonth] = useState(initialMonth)
+  const [yearMenuOpen, setYearMenuOpen] = useState(false)
+  const monthMatches = matches.filter((match) => Number(match.date.slice(0, 4)) === year && Number(match.date.slice(5, 7)) - 1 === month)
   const firstDay = new Date(year, month, 1).getDay()
   const daysInMonth = new Date(year, month + 1, 0).getDate()
-  const monthLabel = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' }).format(new Date(year, month, 1))
-  const weekdays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
+  const monthLabel = new Intl.DateTimeFormat(t.calendarLocale, { month: 'long', year: 'numeric' }).format(new Date(year, month, 1))
+  const weekdays = t.weekdays
+  const changeYear = (nextYear) => {
+    const nextYearMatches = matches.filter((match) => match.date.startsWith(`${nextYear}-`))
+    setYear(nextYear)
+    setMonth(nextYearMatches.length ? Math.max(...nextYearMatches.map((match) => Number(match.date.slice(5, 7)) - 1)) : 0)
+  }
   const calendarDays = Array.from({ length: firstDay + daysInMonth }, (_, index) => index < firstDay ? null : index - firstDay + 1)
 
   return (
@@ -291,7 +303,15 @@ function CalendarPanel({ t }) {
           <p className="mb-1 text-[10px] font-extrabold uppercase tracking-[.16em] text-wine">{t.matches}</p>
           <h3 className="font-display text-3xl font-extrabold uppercase leading-none text-ink">{monthLabel}</h3>
         </div>
-        <div className="flex gap-1">
+        <div className="flex items-center gap-1.5">
+          <div className="relative">
+            <button type="button" onClick={() => setYearMenuOpen((open) => !open)} className="inline-flex h-9 w-[74px] items-center justify-center gap-1 rounded-lg border border-line bg-paper px-2 text-xs font-extrabold text-ink outline-none transition-colors hover:border-gold/70 focus:border-gold focus:ring-2 focus:ring-gold/25" aria-label={t.year} aria-expanded={yearMenuOpen}>
+              {year}<ChevronDown className={`text-muted transition-transform ${yearMenuOpen ? 'rotate-180' : ''}`} size={14} />
+            </button>
+            {yearMenuOpen && <div className="absolute right-0 top-full z-20 mt-1 w-[74px] overflow-hidden rounded-lg border border-line bg-paper p-1 shadow-[0_12px_24px_rgba(0,0,0,0.16)]">
+              {years.map((availableYear) => <button type="button" key={availableYear} onClick={() => { changeYear(availableYear); setYearMenuOpen(false) }} className={`flex w-full items-center justify-center rounded-md px-2 py-2 text-xs font-extrabold transition-colors ${year === availableYear ? 'bg-gold/20 text-ink' : 'text-muted hover:bg-gold/10 hover:text-ink'}`}>{availableYear}</button>)}
+            </div>}
+          </div>
           <button type="button" onClick={() => setMonth((current) => Math.max(0, current - 1))} disabled={month === 0} className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-line text-ink transition-colors hover:border-gold hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-30" aria-label={t.previous}><ChevronLeft size={16} /></button>
           <button type="button" onClick={() => setMonth((current) => Math.min(11, current + 1))} disabled={month === 11} className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-line text-ink transition-colors hover:border-gold hover:bg-gold/10 disabled:cursor-not-allowed disabled:opacity-30" aria-label={t.next}><ChevronRight size={16} /></button>
         </div>
@@ -313,28 +333,28 @@ function CalendarPanel({ t }) {
       </div>
 
       <div className="space-y-3 pb-2">
-        {monthMatches.length ? monthMatches.map((match) => <MatchRow key={match.date} match={match} />) : <div className="rounded-2xl border border-dashed border-line px-4 py-8 text-center text-sm text-muted">{t.noMatches}</div>}
+        {monthMatches.length ? monthMatches.map((match) => <MatchRow key={match.date} match={match} t={t} />) : <div className="rounded-2xl border border-dashed border-line px-4 py-8 text-center text-sm text-muted">{t.noMatches}</div>}
       </div>
 
       <div className="mt-5 border-t border-line pt-4 text-[10px] font-bold uppercase tracking-[.1em] text-muted">
         <span className="mr-4 inline-flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-wine" /> {t.allMatches}</span>
-        <span className="inline-flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-gold" /> Resultado</span>
+        <span className="inline-flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-gold" /> {t.result}</span>
       </div>
     </div>
   )
 }
 
-function MatchRow({ match }) {
+function MatchRow({ match, t }) {
   const date = new Date(`${match.date}T12:00:00`)
   return <article className="rounded-2xl border border-line bg-paper p-4 transition-colors hover:border-gold/70">
     <div className="flex items-center justify-between gap-3">
       <div>
-        <p className="text-[10px] font-extrabold uppercase tracking-[.12em] text-muted">{date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' }).replace('.', '')} · {match.competition}</p>
+        <p className="text-[10px] font-extrabold uppercase tracking-[.12em] text-muted">{date.toLocaleDateString(t.calendarLocale, { day: '2-digit', month: 'short' }).replace('.', '')} · {match.competition}</p>
         <h4 className="mt-2 text-sm font-extrabold text-ink">MFC <span className="font-normal text-muted">vs</span> {match.opponent}</h4>
       </div>
       <span className="min-w-[76px] text-right font-display text-2xl font-extrabold leading-none text-wine">{match.score}</span>
     </div>
-    <div className="mt-3 flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.1em] text-muted"><span className="rounded-full bg-gold/20 px-2 py-1 text-ink">{match.result === 'V' ? 'Vitória' : 'Empate'}</span>{match.detail && <span>{match.detail}</span>}</div>
+    <div className="mt-3 flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.1em] text-muted"><span className="rounded-full bg-gold/20 px-2 py-1 text-ink">{match.result === 'V' ? t.victory : t.draw}</span>{match.detail && <span>{match.detail}</span>}</div>
   </article>
 }
 
