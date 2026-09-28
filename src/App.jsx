@@ -124,7 +124,7 @@ export default function App() {
         </nav>
         <div className="flex items-center justify-self-end gap-2 md:gap-3">
           <Sheet open={settingsOpen} onOpenChange={setSettingsOpen}>
-            <SheetTrigger className="inline-flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-ink text-paper transition-colors hover:bg-gold hover:text-ink" aria-label={t.sidebar}><PanelRightOpen size={17} /></SheetTrigger>
+            <SheetTrigger className="inline-flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-paper text-ink transition-colors hover:bg-gold hover:text-ink" aria-label={t.sidebar}><PanelRightOpen size={17} /></SheetTrigger>
             <SheetContent className="!p-5 sm:w-[min(30rem,90vw)] sm:max-w-[30rem]">
               <SheetHeader>
                 <div className="flex items-center justify-between gap-3">
@@ -212,8 +212,8 @@ export default function App() {
             <div className="identity-badge relative flex h-[190px] w-[190px] items-center justify-center overflow-hidden rounded-2xl bg-ink"><img className="h-[120px] w-[120px] object-contain" src={crest} alt="Escudo bordado do Murilo Futebol Clube" /><span className="absolute bottom-3 font-display text-xs font-bold tracking-[.12em] text-gold">15.02.2025</span></div>
             <p className="identity-lead max-w-[560px] text-xl font-semibold leading-[1.45] md:text-[22px]">{t.lead}</p>
             <div className="identity-stats grid w-full min-w-0 max-w-[760px] grid-cols-2 gap-4">
-              <PremiumStat value="98" label={t.posts} sub={t.postsSub} />
-              <PremiumStat value="129" label={t.followers} sub="" />
+              <PremiumStat value="98" label={t.posts} />
+              <PremiumStat value="129" label={t.followers} />
             </div>
           </div>
         </section>
@@ -403,9 +403,12 @@ function Eyebrow({ children, light = false, center = false }) {
 
 function PremiumStat({ value, label, sub }) {
   return (
-    <div className="premium-stat flex h-full flex-col justify-between gap-3 rounded-2xl border border-line bg-paper p-4 transition-all duration-300 hover:-translate-y-1 hover:border-gold/70 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
+    <div className="premium-stat flex h-full flex-col justify-between gap-3 rounded-2xl border border-line bg-paper p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gold/70 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
       <strong className="font-display text-[38px] leading-none text-wine">{value}</strong>
-      <span className="text-base font-extrabold leading-tight text-ink">{label}{sub && <><br /><small className="block pt-1 text-[11px] font-semibold uppercase tracking-[.08em] text-muted">{sub}</small></>}</span>
+      <span className="text-base font-extrabold leading-tight text-ink">
+        {label}
+        {sub && <small className="mt-1 block text-[11px] font-semibold uppercase tracking-[.08em] text-muted">{sub}</small>}
+      </span>
     </div>
   )
 }
